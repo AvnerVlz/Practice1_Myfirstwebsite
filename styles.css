@@ -101,7 +101,7 @@ footer {
         .slider-content {
             display: flex;
             transition: transform 1s ease;
-            width: 300%; /* Ajusta el ancho según el número de imágenes */
+            width: 100%; /* Ajusta el ancho según el número de imágenes */
         }
         .slider-item {
             flex: 0 0 100%; /* Cada imagen ocupa el 100% del contenedor */
