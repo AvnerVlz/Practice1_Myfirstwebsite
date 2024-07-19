@@ -13,6 +13,11 @@
 
     <!-- STYLESHEET -->
     <link rel="stylesheet" href="styles.css">
+     <!-- STYLESHEET PARA SLIDER-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <style>
+        .mySlides {display:none;}
+        </style>
 </head>
 <body>
     <!-- Sección de encabezado del sitio -->
@@ -46,48 +51,36 @@
        <iframe width="560" height="315" src="https://www.youtube.com/embed/K0Fdt5JLsS0?si=TM9s9BF7OKpDMA4b" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </main>
     <!-- Contenedor principal del slider -->
-   <div class="slider-container">
-        <div class="slider-content">
-            <div class="slider-item">
-                <img src="img1.jpg" alt="Imagen 1">
-            </div>
-            <div class="slider-item">
-                <img src="img2.png" alt="Imagen 2">
-            </div>
-            <div class="slider-item">
-                <img src="img3.jpg" alt="Imagen 3">
-            </div>
-        </div>
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
 
-    <script>
-        let slideIndex = 0;
-        showSlides();
+     <div class="w3-content w3-display-container">
+              <img class="mySlides" src="img1.jpg" style="width:100%">
+              <img class="mySlides" src="img2.png" style="width:100%">
+              <img class="mySlides" src="img3.jpg" style="width:100%">
 
-        function plusSlides(n) {
-            slideIndex += n;
-            showSlides();
-        }
+              <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+              <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+            </div>
 
-        function showSlides() {
-            const slides = document.querySelectorAll(".slider-item");
-            if (slideIndex >= slides.length) {
-                slideIndex = 0;
+            <script>
+            var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+              showDivs(slideIndex += n);
             }
-            if (slideIndex < 0) {
-                slideIndex = slides.length - 1;
+
+            function showDivs(n) {
+              var i;
+              var x = document.getElementsByClassName("mySlides");
+              if (n > x.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = x.length}
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              x[slideIndex-1].style.display = "block";  
             }
-            slides.forEach((slide, index) => {
-                slide.style.display = index === slideIndex ? "block" : "none";
-            });
-            setTimeout(() => {
-                slideIndex++;
-                showSlides();
-            }, 3000); // Cambia la imagen cada 3 segundos
-        }
-    </script>
+            </script>
+   
     <!-- Pie de página del sitio -->
     <footer>
         <p>&copy; 2024 My first website</p>
