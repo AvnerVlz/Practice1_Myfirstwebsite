@@ -9,20 +9,20 @@
     <!-- Configura el viewport para que el sitio sea responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Título de la página que aparece en la pestaña del navegador -->
-    <title>Practica 1</title>
+    <title>CONTACT</title>
 
     <!-- STYLESHEET -->
     <link rel="stylesheet" href="styles.css">
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+     <!-- STYLESHEET PARA SLIDER-->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <style>
+        .mySlides {display:none;}
+        </style>
 </head>
 <body>
     <!-- Sección de encabezado del sitio -->
     <header>
-        <h1 class="animate__animated animate__fadeInUp">Avner Velez portfolio</h1>
-        <p>welcome<p>
+        <h1>Contact</h1>
     </header>
     <!-- Barra de navegación con enlaces -->
     <nav>
@@ -41,13 +41,54 @@
     <!-- Contenido principal de la página -->
     <main>
         <section>
-            <h2>Acerca de este sitio</h2>
-            <p>Este es un sitio web de ejemplo para aprender HTML y CSS.</p>
+            <h2>Pages where you can find me</h2>
         </section>
-        <img src="yo.png">
+            <div class="cont">
+        <img class="imag" src="correo.png" style="width:10%">
+        <img class="imag" src="insta.png" style="width:15%">
+        <img class="imag" src="face.png" style="width:13%">
+            </div>
+
+        <div class="cont2">
+
+        <div class="colu">
+            <h2>EMAIL</h2>
+            <p>avner2002@hotmail.com</p>
+        </div>
+
+        <div class="colu">
+            <h2>INSTAGRAM</h2>
+            <p>@poreon2002</p>
+        </div>
+
+         <div class="colu">
+            <h2>FACEBOOK</h2>
+            <p>Avner Vlz</p>
+        </div>
+
+        </div>
+
         <br>. <!-- SALTO DE LINEA (HTML) -->
-       <iframe width="560" height="315" src="https://www.youtube.com/embed/K0Fdt5JLsS0?si=TM9s9BF7OKpDMA4b" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    </main>
+            <script>
+            var slideIndex = 1;
+            showDivs(slideIndex);
+
+            function plusDivs(n) {
+              showDivs(slideIndex += n);
+            }
+
+            function showDivs(n) {
+              var i;
+              var x = document.getElementsByClassName("mySlides");
+              if (n > x.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = x.length}
+              for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+              }
+              x[slideIndex-1].style.display = "block";  
+            }
+            </script>
+   
     <!-- Pie de página del sitio -->
     <footer>
         <p>&copy; 2024 My first website</p>

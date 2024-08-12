@@ -10,6 +10,8 @@ body {
     text-align: center;
 }
 
+ .container{justify-content: center;}
+
 /* Estilos para el encabezado */
 header {
     font-family: "Ga Maamli", sans-serif;
